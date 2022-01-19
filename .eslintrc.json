@@ -9,7 +9,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "parser": "babel-eslint",
+    // "parser": "babel-eslint",
     "react/prefer-stateless-function": "off",
     "reacr/jsx-filename-extension": ["err", {"extensions": [".js", ".jsx", ".ts", ".tsx"]}]
   }
