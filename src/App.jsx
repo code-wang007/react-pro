@@ -4,7 +4,7 @@ import './style.scss'
 class App extends Component {
   render() {
     return (
-      <div className="root-content">react root content</div>
+      <div className="root-content">react root content change</div>
     )
   }
 }
