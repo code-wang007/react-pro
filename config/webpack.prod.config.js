@@ -3,8 +3,7 @@ const { merge } = require('webpack-merge')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpackConfigBase = require('./webpack.base.config')
-
-const PORT = 8080
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const webpackConfigProd = {
   mode: 'production',
@@ -13,11 +12,14 @@ const webpackConfigProd = {
     new CleanWebpackPlugin({
       protectWebpackAssets: true
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[fullhase:4].css'
+    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       title: 'React App',
       filename: 'index.html',
-      template: path.join(__dirname, '../src/index,html')
+      template: path.join(__dirname, '../src/index.html')
     })
   ]
 }

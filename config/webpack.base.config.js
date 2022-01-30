@@ -1,7 +1,10 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const MODE = process.env.NODE_ENV !== 'prodction'
 
 const webpackBaseConfig = {
-  entry: path.join(__dirname, '../src/index.jsx'),
+  entry: path.join(__dirname, '../src/index.tsx'),
   output: {
     path: path.join(__dirname, '../dist'),
     filename: '[name].[fullhash:4].js'
@@ -24,7 +27,11 @@ const webpackBaseConfig = {
       },
       {
         test: /\.(sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          MODE ? 'style-loader' : MiniCssExtractPlugin, 
+          'css-loader', 
+          'sass-loader'
+        ]
       }
     ]
   }

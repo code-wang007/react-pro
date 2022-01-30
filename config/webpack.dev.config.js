@@ -4,6 +4,7 @@ const { merge } = require('webpack-merge')
 const OpenBrowserPlugin = require('open-browser-webpack4-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpackConfigBase = require('./webpack.base.config')
+const mockMiddleWare = require('./mock.config')
 
 const PORT = 8080
 
@@ -21,7 +22,19 @@ const webpackConfigDev = {
       url: `http://localhost:${PORT}/#/`
     }),
   ],
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, '.'),
+    historyApiFallback: false,
+    hot: false,
+    host: '0.0.0.0',
+    port: PORT,
+    before(app) {
+      const projectDir = path.resolve()
+      const mockDir = './mock'
+      app.use(mockMiddleWare({ projectDir, mockDir }))
+    }
+  }
 }
 
 module.exports = merge(webpackConfigBase, webpackConfigDev)
