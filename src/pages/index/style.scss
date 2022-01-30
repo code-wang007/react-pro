@@ -1,0 +1,64 @@
+.home-container-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: space-between;
+
+	.skeleton {
+		border: solid 1px red;
+	}
+
+  .header-wrapper{
+		width: calc(100% - 2px);
+		height: 100px;
+		margin-bottom: 22px;
+	}
+
+  .content-wrapper{
+		// width: 80%;
+		width: 1220px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		.left-content-box {
+			// flex: 3;
+			width: 909px;
+
+			.lt-data-trend {
+				height: 437px;
+			}
+			.lt-extension-info {
+				margin: 22px 0;
+				height: 100px;
+			}
+			.lt-market-service {
+				height: 345px;
+			}
+		}
+
+		.right-content-box {
+			width: 288px;
+
+			.rt-self-info {
+				height: 267px;
+			}
+			.rt-banner {
+				margin: 20px 0;
+				height: 148px;
+			}
+			.rt-more {
+				height: 470px;
+			}
+		}
+	}
+
+  .footer-wrapper{
+		width: calc(100% - 2px);
+		height: 100px;
+		margin-top: 22px;
+	}
+}

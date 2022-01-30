@@ -12,5 +12,16 @@
     // "parser": "babel-eslint",
     "react/prefer-stateless-function": "off",
     "reacr/jsx-filename-extension": ["err", {"extensions": [".js", ".jsx", ".ts", ".tsx"]}]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["pages", "./src/pages"],
+          ["@components", "./src/components"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".d.ts", ".ts"]
+      }
+    }
   }
 }

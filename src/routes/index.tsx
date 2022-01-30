@@ -27,13 +27,13 @@ const AppWrap = withRouter(App)
 class AppRoute extends Component {
   render() {
     return (
-      <div>
+      // <div>
         <Router>
           <AppWrap>
             { renderRoutes(allRouters.map(item => ({...item, key: item.path}))) }
           </AppWrap>
         </Router>
-      </div>
+      // </div>
     )
   }
 }
