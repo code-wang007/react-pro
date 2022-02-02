@@ -13,7 +13,7 @@ class IndexPage extends Component {
   render() {
     return (
       <div className='home-container-wrapper'>
-        <div className='header-wrapper skeleton'>
+        <div className='header-wrapper'>
           <Header />
         </div>
         <div className='content-wrapper'>

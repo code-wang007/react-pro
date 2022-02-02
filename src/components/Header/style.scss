@@ -1,0 +1,83 @@
+.header-component-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+
+  .header-logo {
+    width: 126px;
+    height: 72px;
+    background: url('../../static/image/logo2020.png');
+    background-size: cover;
+  }
+  .header-menu {
+    flex: 1;
+    display: flex;
+    margin-left: 20px;
+    .header-menu-item {
+      position: relative;
+      color: #000;
+
+      &:hover {
+        .name-arrow-item {
+          border-bottom: solid 2px rgb(3, 3, 116);
+        }
+
+        .arrow-icon {
+          transform: rotate(180deg);
+        }
+
+        .menu-child-box {
+          visibility: visible;
+          opacity: 1;
+          transition: all .3s ease;
+        }
+      }
+
+      .name-arrow-item {
+        display: flex;
+        align-items: center;
+        height: 38px;
+        cursor: pointer;
+        margin: 0 10px 0 5px;
+        border-bottom: solid 2px transparent;
+
+        .arrow-icon {
+          margin-left: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .menu-child-box {
+      visibility: hidden;
+      position: absolute;
+      opacity: 0;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+      font-size: 12px;
+      color: #6b6b6b;
+      border-radius: 4px;
+      padding: 6px;
+      cursor: pointer;
+
+      .menu-child-box-item {
+        white-space: nowrap;
+        padding: 2px;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  
+
+  .header-login-info {
+    color: #545C63;
+
+    .user-logo {
+      margin-right: 5px;
+    }
+  }
+}
